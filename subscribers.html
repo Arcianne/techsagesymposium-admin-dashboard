@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Pending Events</title>
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon" />
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- global styles -->
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/theme/light.css" id="theme">
+
+    <!-- page style -->
+    <link rel="stylesheet" href="css/pages/pending-event.css">
+</head>
+<body>
+    <header>
+        <nav class="items container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/icon.png" alt="TechSageSymposium-icon">
+                    <h1>TechSageSymposium</h1>
+                </a>
+            </div>
+            <div class="menu">
+                    <p class="active"><a href="index.html">Admin Dashboard</a></p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="pending-events.html">Pending Events</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="pending-registrations.html">Registration List</a>
+                </li>
+                <li class="active">
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="subscribers.html">Subscribers List</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <h1>Emails:</h1>
+            <div class="list-container">
+                <div class="list">
+                    <div class="list-details">
+                        <div class="email">
+                            <p>Miou@email.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- sweet alert script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- main script -->
+    <script src="js/main.js"></script>
+</body>
+</html>

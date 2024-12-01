@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Pending Events</title>
+    <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon" />
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- global styles -->
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/theme/light.css" id="theme">
+
+    <!-- page style -->
+    <link rel="stylesheet" href="css/pages/pending-event.css">
+</head>
+<body>
+    <header>
+        <nav class="items container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/icon.png" alt="TechSageSymposium-icon">
+                    <h1>TechSageSymposium</h1>
+                </a>
+            </div>
+            <div class="menu">
+                    <p class="active"><a href="index.html">Admin Dashboard</a></p>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <aside>
+            <ul>
+                <li class="active">
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="pending-events.html">Pending Events</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="pending-registrations.html">Registration List</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-ticket"></i>
+                    <a href="subscribers.html">Subscribers List</a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <div class="list-container" id="list-container">
+
+            </div>
+        </div>
+    </main>
+
+    <!-- sweet alert script -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- axios cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- moment cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+
+    <!-- script for pending-events -->
+    <script src="js/pending-events.js"></script>
+
+    <!-- main script -->
+    <script src="js/main.js"></script>
+</body>
+</html>

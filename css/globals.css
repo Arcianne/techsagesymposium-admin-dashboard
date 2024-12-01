@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Rationale&display=swap');
+
+* {
+    font-family: "Rationale", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 80%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--accent);
+}
+
+/* nav */
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+nav img {
+    width: 90px;
+}
+
+.logo a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.logo h1{
+    text-align: center;
+    color: var(--heading-color);
+    font-size: 1.9rem;
+    font-weight: 150;
+}
+
+.menu p a{
+    color: var(--heading-color);
+    font-size: 1.9rem;
+}
+
+
+/* main */
+main {
+    display: flex;
+}
+
+aside {
+    width: 16%;
+    height: 100vh;
+    border-right: 1px solid var(--accent);
+    background-color: var(--primary);
+    color: var(--accent);
+    font-size: 1.5rem;
+    padding: .5rem;
+}
+
+aside ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+aside ul li {
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+aside ul .active {
+    background-color: var(--background-color);
+}
+
+.content {
+    width: 84%;
+}
+
+.btn-accept,
+.btn-decline {
+    padding: 7px 25px;
+    font-size: 1.25rem;
+    border: 1px solid black;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: var(--secondary);
+    margin: 0 1rem;
+}
+
+.btn-accept {
+    background-color: green;
+}
+
+.btn-decline{
+    background-color: red;
+}

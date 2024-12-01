@@ -1,0 +1,20 @@
+.list-container {
+    margin-top: 1rem;
+    background-color: var(--primary);
+}
+
+.list-container .list {
+    border-top: 1px solid var(--accent);
+}
+
+
+.list-details 
+.email p {
+    display: inline;
+    font-size: 1rem;
+}
+
+.list-details > div:first-child p:nth-child(2){
+    font-size: .75rem;
+}
+
