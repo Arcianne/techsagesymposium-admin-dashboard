@@ -1,6 +1,6 @@
 async function fetchPendingEvents() {
     try {
-        const response = await axios.get("http://localhost:8000/api/v1/events/pending-status/false");
+        const response = await axios.get(ENVIRONMENT.API_BASE_URL + "/api/v1/events/pending-status/false");
         const dataSource = response.data.data
         const listContainer = document.getElementById("list-container")
 
@@ -32,8 +32,8 @@ async function fetchPendingEvents() {
                         </div>
 
                         <div>
-                            <button class="btn-accept">Accept</button>
-                            <button class="btn-decline">Decline</button>
+                            <button class="btn-accept" onclick="acceptEvent('${event._id}', '${event.title}')">Accept</button>
+                            <button class="btn-decline" onclick="promptEventDeletion('${event._id}')">Decline</button>
                         </div>
                     </div>
                 </div>
@@ -47,3 +47,46 @@ async function fetchPendingEvents() {
 }
 
 fetchPendingEvents()
+
+async function deleteEvent(id){
+    try {
+        const response = await axios.delete(ENVIRONMENT.API_BASE_URL + "/api/v1/events/" + id)
+        console.log(response)
+        fetchPendingEvents()
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+function promptEventDeletion(id){
+    Swal.fire({
+        title: "Are you sure",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        confirmButtonText: "Yes",
+        showCancelButton: true,
+    }).then((result) => {
+        if(result.isConfirmed) {
+            deleteEvent(id)
+        }
+    });
+}
+
+async function acceptEvent(id, title){
+    try {
+        const response = await axios.put(
+            ENVIRONMENT.API_BASE_URL + "/api/v1/events/" + id, 
+            { is_pending: true }
+        )
+
+        Swal.fire({
+            title: "Accepted!",
+            text: title + "event has been successfully accepted and is now available on the event page.",
+            icon: "success",
+        });
+        
+        fetchPendingEvents()
+    } catch (error) {
+        console.log(error)
+    }
+}
