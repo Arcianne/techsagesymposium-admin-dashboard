@@ -34,7 +34,7 @@
                 <img src="assets/icon.png" alt="TechSageSymposium">
                 <h1>Welcome to TechSageSymposium Admin Dashboard</h1>
                 <p>Enter code to continue</p>
-                <form action="#">
+                <form action="pending-events.html" onsubmit="return passcheck()">
                     <div class="input-fields" id="password">
                         <input type="password" required maxlength="1" id="pass1" />
                         <input type="password" required maxlength="1" id="pass2"/>
@@ -42,13 +42,12 @@
                         <input type="password" required maxlength="1" id="pass4"/>
                     </div>
                     <div class="button">
-                        <button class="btn" type="button">
+                        <button class="btn" type="submit">
                             Done
                         </button>
                     </div>
             </form>
             </div>
-            
         </div>
     </main>
 

@@ -7,6 +7,10 @@
     border-top: 1px solid var(--accent);
 }
 
+.list .list-details{
+    padding: .5rem 1.5rem;
+    color: var(--text-color);
+}
 
 .list-details 
 .email p {

@@ -117,3 +117,7 @@ aside ul .active {
 .btn-decline{
     background-color: red;
 }
+
+.content .header {
+    padding: 1rem 1.5rem 0 1.5rem;
+}
