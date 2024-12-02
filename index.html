@@ -7,15 +7,49 @@
     <link rel="shortcut icon" href="assets/icon.png" type="image/x-icon" />
 
     <!-- global styles -->
-    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="css/theme/light.css" id="theme">
 
     <!-- page style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <header>
+        <nav class="items container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/icon.png" alt="TechSageSymposium-icon">
+                    <h1>TechSageSymposium</h1>
+                </a>
+            </div>
+            <div class="menu">
+                    <p class="active"><a href="index.html">Admin Dashboard</a></p>
+            </div>
+        </nav>
+    </header>
+
     <main>
-        
+        <div class="main-container">
+            <div class="content">
+                <img src="assets/icon.png" alt="TechSageSymposium">
+                <h1>Welcome to TechSageSymposium Admin Dashboard</h1>
+                <p>Enter code to continue</p>
+                <form action="#">
+                    <div class="input-fields" id="password">
+                        <input type="password" required maxlength="1" id="pass1" />
+                        <input type="password" required maxlength="1" id="pass2"/>
+                        <input type="password" required maxlength="1" id="pass3"/>
+                        <input type="password" required maxlength="1" id="pass4"/>
+                    </div>
+                    <div class="button">
+                        <button class="btn" type="button">
+                            Done
+                        </button>
+                    </div>
+            </form>
+            </div>
+            
+        </div>
     </main>
 
     <!-- sweet alert script -->
