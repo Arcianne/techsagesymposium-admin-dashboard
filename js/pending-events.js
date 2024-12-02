@@ -1,6 +1,6 @@
 async function fetchPendingEvents() {
     try {
-        const response = await axios.get(ENVIRONMENT.API_BASE_URL + "/api/v1/events/pending-status/false");
+        const response = await axios.get(ENVIRONMENT.API_BASE_URL + "/api/v1/events/pending-status/true");
         const dataSource = response.data.data
         const listContainer = document.getElementById("list-container")
 
@@ -76,7 +76,7 @@ async function acceptEvent(id, title){
     try {
         const response = await axios.put(
             ENVIRONMENT.API_BASE_URL + "/api/v1/events/" + id, 
-            { is_pending: true }
+            { is_pending: false }
         )
 
         Swal.fire({
