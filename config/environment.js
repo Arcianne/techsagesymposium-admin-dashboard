@@ -1,4 +1,4 @@
 ENVIRONMENT = {
-    BASE_URL: 'http://192.168.100.4:5500',
-    API_BASE_URL: 'http://192.168.100.4:8000',
+    BASE_URL: 'https://admin.techsagesymposium.vercel.app',
+    API_BASE_URL: 'https://techsagesymposium-backend.onrender.com',
 }

@@ -1,6 +1,6 @@
 async function fetchPendingAttendees() {
     try {
-        const response = await axios.get("http://localhost:8000/api/v1/attendees/pending-status/false");
+        const response = await axios.get(ENVIRONMENT.API_BASE_URL + "/api/v1/attendees/pending-status/true");
         const listContainer = document.getElementById("list-container")
         console.log(listContainer)
         const dataSource = response.data.data
@@ -9,7 +9,7 @@ async function fetchPendingAttendees() {
                 <div class="list-details">
                     <div class="title">
                         <p>Event Name</p>
-                        <h1>${attendee.event_id}</h1>
+                        <h1>${attendee.event_id.title}</h1>
                     </div>
                     <div class="name">
                         <p>Attendee Name</p>
@@ -32,10 +32,9 @@ async function fetchPendingAttendees() {
                     </div>
 
                     <div>
-                        <button class="btn-accept">Send Confirmation</button>
-                        <button class="btn-decline">Decline</button>
+                        <button class="btn-accept" onclick="acceptAttendee('${attendee._id}', '${attendee.attendee_name}', '${attendee.email}')">Send Confirmation</button>
+                        <button class="btn-decline" onclick="promptEventDeletion('${attendee._id}')">Decline</button>
                     </div>
-
                 </div>
             </div>
         `).join('')
@@ -47,3 +46,46 @@ async function fetchPendingAttendees() {
 }
 
 fetchPendingAttendees()
+
+async function deleteAttendee(id) {
+    try {
+        const response = axios.delete(ENVIRONMENT.API_BASE_URL + "/api/v1/attendees/" + id)
+        
+        fetchPendingAttendees()
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+function promptEventDeletion(id){
+    Swal.fire({
+        title: "Are you sure",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        confirmButtonText: "Yes",
+        showCancelButton: true,
+    }).then((result) => {
+        if(result.isConfirmed) {
+            deleteAttendee(id)
+        }
+    });
+}
+
+async function acceptAttendee(id, name, email) {
+    try {
+        const response = await axios.put(
+            ENVIRONMENT.API_BASE_URL + "/api/v1/attendees/" + id, 
+            { is_pending: false }
+        )
+    
+        Swal.fire({
+            title: "Registration Accepted Successfully",
+            text: name + " Ticket will be emailed to " + email,
+            icon: "success",
+        });
+        
+        fetchPendingAttendees()
+    } catch (error) {
+        console.log(error)
+    }
+}
